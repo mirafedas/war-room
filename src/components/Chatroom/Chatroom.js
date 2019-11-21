@@ -7,7 +7,7 @@ import ChatInput from '../ChatInput';
 import './Chatroom.scss';
 
 const CN = 'chatroom';
-const URL = 'ws://localhost:3000'
+const URL = 'ws://localhost:8080'
 
 class Chatroom extends React.Component {
   constructor(props) {
