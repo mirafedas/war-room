@@ -2,13 +2,13 @@ import React from 'react';
 import Enzyme from 'enzyme';
 import { shallow } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import Message from './Message';
+import ChatInput from './ChatInput';
 
 Enzyme.configure({ adapter: new Adapter() })
 
-describe('<Message />', () => {
+describe('<ChatInput />', () => {
   test('should match snapshot', () => {
-    const wrapper = shallow(<Message />);
+    const wrapper = shallow(<ChatInput />);
     expect(wrapper).toMatchSnapshot();
   });
 });
