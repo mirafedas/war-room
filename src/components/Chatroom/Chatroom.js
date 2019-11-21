@@ -7,7 +7,8 @@ import ChatInput from '../ChatInput';
 import './Chatroom.scss';
 
 const CN = 'chatroom';
-const URL = 'ws://localhost:8080'
+// const URL = 'ws://localhost:8080'
+const URL = 'wss://server-www.herokuapp.com/';
 
 class Chatroom extends React.Component {
   constructor(props) {
