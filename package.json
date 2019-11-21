@@ -1,6 +1,9 @@
 {
   "name": "enot",
   "version": "0.1.0",
+  "engines": {
+    "node": "10.16.0"
+  },
   "private": true,
   "dependencies": {
     "@react-firebase/database": "^0.3.11",
