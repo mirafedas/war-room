@@ -26,12 +26,10 @@ class Chatroom extends React.Component {
 
   componentDidMount() {
     this.ws.onopen = () => {
-      // on connecting, do nothing but log it to the console
       console.log('connected');
     }
 
     this.ws.onmessage = evt => {
-      // on receiving a message, add it to the list of messages
       const message = JSON.parse(evt.data);
       this.addMessage(message);
       console.log(this.state)
@@ -39,7 +37,6 @@ class Chatroom extends React.Component {
 
     this.ws.onclose = () => {
       console.log('disconnected')
-      // automatically try to reconnect on connection loss
       this.setState({
         ws: new WebSocket(URL),
       })
@@ -50,11 +47,13 @@ class Chatroom extends React.Component {
     this.setState(state => ({ messages: [message, ...state.messages] }))
 
   submitMessage = messageString => {
-    // on submitting the ChatInput form, send the message, add it to the list and reset the input
     const message = { username: this.state.username, message: messageString };
     console.log(message);
     this.ws.send(JSON.stringify(message));
     this.addMessage(message);
+    const { addMessages } = this.props;
+    console.log(addMessages)
+    addMessages(message);
   }
 
   render() {

@@ -1,9 +1,15 @@
-import CHANGE_IMAGE from '../constants/actionTypes';
+import { messagesRef } from "../config/firebase";
+import GET_MESSAGES from '../constants/actionTypes';
 
-const changeImage = () => {
-  return {
-    type: CHANGE_IMAGE,
-  };
-}
+export const addMessages = newMessage => async dispatch => {
+  messagesRef.push().set(newMessage);
+};
 
-export default changeImage;
+export const getMessages = () => async dispatch => {
+  messagesRef.on("value", snapshot => {
+    dispatch({
+      type: GET_MESSAGES,
+      payload: snapshot.val()
+    });
+  });
+};

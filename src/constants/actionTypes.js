@@ -1,3 +1,3 @@
-const CHANGE_IMAGE = 'CHANGE_IMAGE';
+export const GET_MESSAGES = 'GET_MESSAGES';
 
-export default CHANGE_IMAGE;
+export default GET_MESSAGES;

@@ -1,20 +1,21 @@
 import React from 'react';
 import Particles from 'react-particles-js';
-import { createStore } from 'redux';
-import reducer from './reducers';
-import { Provider } from 'react-redux';
+import reducers from './reducers';
 import {
     BrowserRouter as Router,
     Switch,
     Route,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import { createStore, applyMiddleware } from "redux";
+import reduxThunk from "redux-thunk";
 
 import Chatroom from './components/Chatroom';
 import StartPage from './components/StartPage';
 
 import './App.scss';
 
-const store = createStore(reducer);
+const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 const CN = 'app';
 
 const App = () => {
