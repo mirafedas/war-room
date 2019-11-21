@@ -1,17 +1,19 @@
 .chatroom {
   &__messages {
-    height: 400px;
+    height: 500px;
     width: 100%;
-    padding: 10px;
-    background-color: white;
-  }
-
-  &__wrapper {
+    padding: 20px;
+    background-color: transparent;
     color: white;
-  }
 
-  &__text {
-    margin: 10px;
+    &-container {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 20px;
+      height: 100%;
+      overflow: scroll;
+      text-align: left;
+    }
   }
 
   &__input {
