@@ -1,0 +1,18 @@
+.buttons {
+  &__wrapper{
+    background-color: aquamarine;
+  }
+
+  &__btn {
+    width: 200px;
+    height: 30px;
+    margin: 10px;
+    background-color: lightsalmon;
+    border: 2px solid orange;
+    text-transform: uppercase;
+
+    &:hover {
+      border: 1px solid red;
+    }
+  }
+}
