@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-firebase/database": "^0.3.11",
+    "firebase": "^7.4.0",
     "local-storage": "^2.0.0",
     "node-sass": "^4.13.0",
     "react": "^16.12.0",

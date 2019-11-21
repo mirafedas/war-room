@@ -53,7 +53,7 @@ class Chatroom extends React.Component {
     // on submitting the ChatInput form, send the message, add it to the list and reset the input
     const message = { username: this.state.username, message: messageString };
     console.log(message);
-    this.ws.onopen = () => this.ws.send(JSON.stringify(message));
+    this.ws.send(JSON.stringify(message));
     this.addMessage(message);
   }
 
